@@ -4,13 +4,8 @@ dist: xenial
 language: python
 env:
  - LINT=1
- - IMAGE="ubuntu:trusty"
- - IMAGE="ubuntu:xenial"
- - IMAGE="ubuntu:bionic"
- - IMAGE="ubuntu:cosmic"
- - IMAGE="images:ubuntu/disco"
- - IMAGE="images:centos/6"
- - IMAGE="images:centos/7"
+ - IMAGE="debian:buster"
+ - IMAGE="debian:stretch"
 script:
  - if [ ! -z ${LINT} ]; then echo "Hello, world!"; fi
 # setup dependencies here to save time on simpler test environments
