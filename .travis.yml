@@ -19,4 +19,4 @@ install:
   - ansible --version
   - molecule --version
 script:
-  - sudo molecule --debug test
+  - sudo -E su $USER -c "source ~/virtualenv/python3.6/bin/activate; molecule --debug test"
