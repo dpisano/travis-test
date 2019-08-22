@@ -12,13 +12,10 @@ before_install:
   - sudo sh -c 'echo PATH=/snap/bin:$PATH >> /etc/environment'
   - sudo lxd waitready
   - sudo lxd init --auto
-  - sudo usermod -a -G lxd travis
-  - id
-  - sudo su - travis
-  - id
+  - sudo usermod -a -G lxd $USER
 install:
   - pip3 install ansible molecule
   - ansible --version
   - molecule --version
 script:
-  - molecule --debug test
+  - sudo -E su $USER -c "molecule --debug test"
