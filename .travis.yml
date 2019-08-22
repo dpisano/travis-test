@@ -2,6 +2,7 @@
 sudo: required
 dist: xenial
 language: python
+python: 3.6
 # env:
 #  - LINT=1
 #  - IMAGE="images:debian/buster"
@@ -18,4 +19,4 @@ install:
   - ansible --version
   - molecule --version
 script:
-  - sudo -E su $USER -c "molecule --debug test"
+  - sudo -E su $USER -c "source ~/virtualenv/python2.7/bin/activate; molecule --debug test"
