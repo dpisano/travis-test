@@ -5,6 +5,7 @@ driver:
   name: lxd
 lint:
   name: yamllint
+  enabled: False
 platforms:
   - name: instance
     source:
