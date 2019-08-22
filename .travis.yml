@@ -13,9 +13,12 @@ before_install:
   - sudo lxd waitready
   - sudo lxd init --auto
   - sudo usermod -a -G lxd travis
+  - id
+  - sudo su - travis
+  - id
 install:
   - pip3 install ansible molecule
   - ansible --version
   - molecule --version
 script:
-  - molecule --debug --sudo test
+  - molecule --debug test
