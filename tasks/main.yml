@@ -1,3 +1,15 @@
 ---
 - name: Prep system
   include: install_packages.yml
+
+- name: Clone T-Pot repo
+  include: clone_tpot_repo.yml
+
+- name: Setup T-Pot
+  include: setup_tpot_config.yml
+
+- name: Setup Directorys and Permissions
+  include: setup_directory_files_permissions.yml
+
+- name: Setup grub
+  include: setup_grub.yml
