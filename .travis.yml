@@ -20,4 +20,4 @@ install:
   - molecule --version
 script:
   - sudo -E su $USER -c "source ~/virtualenv/python3.6/bin/activate;
-    molecule --debug test"
+    molecule test"
