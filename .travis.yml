@@ -18,4 +18,4 @@ install:
   - ansible --version
   - molecule --version
 script:
-  - molecule --debug test
+  - molecule --debug --sudo test
