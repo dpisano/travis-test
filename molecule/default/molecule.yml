@@ -1,0 +1,22 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: lxd
+lint:
+  name: yamllint
+platforms:
+  - name: instance
+    source:
+      type: image
+      mode: pull
+      server: https://images.linuxcontainers.org
+      alias: debian/stretch/amd64
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

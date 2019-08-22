@@ -2,10 +2,10 @@
 sudo: required
 dist: xenial
 language: python
-env:
- - LINT=1
- - IMAGE="images:debian/buster"
- - IMAGE="images:debian/stretch"
+# env:
+#  - LINT=1
+#  - IMAGE="images:debian/buster"
+#  - IMAGE="images:debian/stretch"
 before_install:
   - sudo apt remove -y --purge lxd lxd-client
   - sudo snap install lxd
@@ -18,8 +18,4 @@ install:
   - ansible --version
   - molecule --version
 script:
- - if [ ! -z ${LINT} ]; then echo "Hello, world!"; fi
- - if [ ! -z ${IMAGE} ]; then
-      sudo su travis -c 'lxc launch ${IMAGE} mymachinecontainer';
-      sudo su travis -c 'lxc exec mymachinecontainer -- sh -c "lsb_release -a || cat /etc/redhat-release || cat /etc/issue"';
-   fi
+  - molecule test
