@@ -17,6 +17,8 @@ platforms:
       security.privileged: 'true'
 provisioner:
   name: ansible
+  ansible_args:
+    - --skip-tags "grub"
   lint:
     name: ansible-lint
 verifier:

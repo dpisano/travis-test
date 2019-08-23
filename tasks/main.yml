@@ -16,3 +16,4 @@
 
 - name: Setup grub
   include: setup_grub.yml
+  tag: grub
