@@ -5,6 +5,9 @@
 - name: Clone T-Pot repo
   include: clone_tpot_repo.yml
 
+- name: Make Users
+  include: make_tpot_user.yml
+
 - name: Setup T-Pot
   include: setup_tpot_config.yml
 
