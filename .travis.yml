@@ -21,8 +21,8 @@ install:
   - molecule --version
 script:
   - sudo -E su $USER -c "source ~/virtualenv/python3.6/bin/activate;
-    molecule create
-    molecule prepare
-    lxc storage list
-    df -h
+    molecule create;
+    molecule prepare;
+    lxc storage list;
+    df -h;
     molecule --debug test"
