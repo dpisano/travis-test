@@ -24,5 +24,7 @@ script:
     molecule create;
     molecule prepare;
     lxc storage list;
+    lxc storage info default;
+    which tar;
     df -h;
     molecule --debug test"
