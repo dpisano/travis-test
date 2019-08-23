@@ -13,7 +13,7 @@ platforms:
       server: https://images.linuxcontainers.org
       alias: debian/stretch/amd64
     config:
-      security.nesting: true
+      security.nesting: "true"
 provisioner:
   name: ansible
   lint:
