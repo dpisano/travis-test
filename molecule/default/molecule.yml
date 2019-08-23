@@ -12,6 +12,8 @@ platforms:
       mode: pull
       server: https://images.linuxcontainers.org
       alias: debian/stretch/amd64
+    config:
+      security.nesting: true
 provisioner:
   name: ansible
   lint:
