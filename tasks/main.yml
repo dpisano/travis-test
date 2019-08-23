@@ -16,4 +16,4 @@
 
 - name: Setup grub
   include: setup_grub.yml
-  tag: molecule-notest
+  tags: molecule-notest
