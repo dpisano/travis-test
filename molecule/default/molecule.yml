@@ -31,9 +31,9 @@ scenario:
     # - dependency
     - syntax
     - create
-    # - prepare
+    - prepare
     - converge
     # - idempotence
     # - side_effect
-    - verify
+    # - verify
     - destroy
