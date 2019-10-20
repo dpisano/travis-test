@@ -21,4 +21,5 @@
 - name: Install python docker module
   pip:
     name: docker
+    executable: pip3
     state: present
