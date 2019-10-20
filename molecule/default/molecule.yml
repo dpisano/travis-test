@@ -1,6 +1,4 @@
 ---
-ansible:
-  extra_vars: ansible_python_interpreter=/usr/bin/python3
 dependency:
   name: galaxy
 driver:
@@ -25,6 +23,10 @@ provisioner:
   name: ansible
   lint:
     name: ansible-lint
+  inventory:
+    host_vars:
+      instance:
+        ansible_python_interpreter: /usr/bin/python3
 verifier:
   name: testinfra
   lint:
