@@ -13,7 +13,7 @@ platforms:
       server: https://images.linuxcontainers.org
       alias: debian/stretch/amd64
       protocol: simplestreams
-    architecture: amd64
+    architecture: x86_64
     profiles:
       - default
     config:
