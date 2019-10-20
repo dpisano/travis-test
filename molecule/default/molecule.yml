@@ -13,6 +13,9 @@ platforms:
       server: https://images.linuxcontainers.org
       alias: debian/stretch/amd64
       protocol: simplestreams
+    architecture: amd64
+    profiles:
+      - default
     config:
       security.nesting: 'true'
       security.privileged: 'true'
@@ -34,7 +37,7 @@ scenario:
     - create
     - prepare
     - converge
-    # - idempotence
+    - idempotence
     # - side_effect
     # - verify
     - destroy
