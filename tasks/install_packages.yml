@@ -28,16 +28,6 @@
     state: present
     update_cache: yes
 
-- name: Install python docker module
-  pip:
-    name: docker
-    state: present
-
-- name: Install python yq module
-  pip:
-    name: yq
-    state: present
-
 - name: Remove unneeded packegs
   apt:
     name: ['exim4-base', 'mailutils', 'python-configparser']
@@ -58,3 +48,15 @@
   register: hold_result
   changed_when:
     - '"mailutils set on hold" in hold_result.stdout'
+
+- name: Install python docker module
+  pip:
+    name: docker
+    executable: pip3
+    state: present
+
+- name: Install python yq module
+  pip:
+    name: yq
+    executable: pip3
+    state: present
