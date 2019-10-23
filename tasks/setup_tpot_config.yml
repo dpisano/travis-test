@@ -4,6 +4,11 @@
     src: sensor.yml
     dest: /opt/tpot/etc/tpot.yml
 
+- name: Make sure docker is running
+  service:
+    name: docker
+    state: started
+
 - name: Get list of docker images to pull
   shell: |
     cat /opt/tpot/etc/tpot.yml | grep -v '#' | grep image | cut -d'"' -f2 | uniq
