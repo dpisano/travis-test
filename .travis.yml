@@ -13,4 +13,6 @@ install:
   - ansible --version
   - molecule --version
 script:
+  - molecule create
+  - molecule prepare
   - molecule --debug test
