@@ -2,23 +2,15 @@
 dependency:
   name: galaxy
 driver:
-  name: lxd
+  name: docker
 lint:
   name: yamllint
 platforms:
   - name: instance
-    source:
-      type: image
-      mode: pull
-      server: https://images.linuxcontainers.org
-      alias: debian/stretch/amd64
-      protocol: simplestreams
-    architecture: x86_64
-    profiles:
-      - default
-    config:
-      security.nesting: 'true'
-      security.privileged: 'true'
+    image: "jrei/systemd-debian:9"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
 provisioner:
   name: ansible
   lint:
@@ -41,7 +33,7 @@ scenario:
     - create
     - prepare
     - converge
-    - idempotence
+    # - idempotence
     # - side_effect
     # - verify
     - destroy
