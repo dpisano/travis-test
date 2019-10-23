@@ -52,11 +52,11 @@
 - name: Install python docker module
   pip:
     name: docker
-    # executable: pip3
+    executable: pip3
     state: present
 
 - name: Install python yq module
   pip:
     name: yq
-    # executable: pip3
+    executable: pip3
     state: present
