@@ -27,10 +27,10 @@ verifier:
 scenario:
   name: default
   test_sequence:
-    - lint
-    - destroy
+    # - lint
+    # - destroy
     # - dependency
-    - syntax
+    # - syntax
     - create
     - prepare
     - converge
