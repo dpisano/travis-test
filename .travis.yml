@@ -2,6 +2,7 @@
 sudo: required
 dist: xenial
 language: python
+services: docker
 python: 3.6
 # env:
 #  - LINT=1
