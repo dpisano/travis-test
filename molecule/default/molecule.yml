@@ -7,7 +7,7 @@ lint:
   name: yamllint
 platforms:
   - name: instance
-    image: "geerlingguy/docker-debian9-ansible"
+    image: "honeynet/docker-debian9-ansible-python3"
     command: /lib/systemd/systemd
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
