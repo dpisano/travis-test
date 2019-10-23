@@ -21,7 +21,10 @@
     dest: /etc/systemd/system/
     remote_src: yes
 
+- name: debug ps
+  command: ps -ea
+
 - name: Enable tpot service
-  systemd:
+  service:
     name: tpot
     enabled: yes
