@@ -8,6 +8,7 @@ lint:
 platforms:
   - name: instance
     image: "geerlingguy/docker-debian9-ansible"
+    command: /lib/systemd/systemd
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
