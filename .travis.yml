@@ -8,6 +8,8 @@ python: 3.6
 #  - LINT=1
 #  - IMAGE="images:debian/buster"
 #  - IMAGE="images:debian/stretch"
+before_install:
+  - docker info
 install:
   - pip3 install ansible molecule docker
   - ansible --version
