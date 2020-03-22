@@ -1,25 +1,18 @@
 ---
-sudo: required
-dist: xenial
+dist: bionic
 language: python
 python: 3.6
-# env:
-#  - LINT=1
-#  - IMAGE="images:debian/buster"
-#  - IMAGE="images:debian/stretch"
+
 before_install:
-  - sudo apt remove -y --purge lxd lxd-client
-  - sudo snap install lxd
-  - sudo sh -c 'echo PATH=/snap/bin:$PATH >> /etc/environment'
-  - sudo lxd waitready
-  - sudo lxd init --auto
-  - sudo usermod -a -G lxd $USER
+  - sudo apt-get update && sudo apt-get install -y bridge-utils dnsmasq-base ebtables libvirt-bin libvirt-dev qemu-kvm qemu-utils ruby-dev
+  - sudo wget -nv https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb
+  - sudo dpkg -i vagrant_2.2.7_x86_64.deb
+  - vagrant --version
+  - sudo vagrant plugin install vagrant-libvirt
 install:
   - pip3 install ansible molecule
   - ansible --version
   - molecule --version
 script:
-  - sudo -E su $USER -c "source ~/virtualenv/python3.6/bin/activate;
-    molecule create;
-    molecule prepare;
-    molecule test"
+  - sudo vagrant up --provider=libvirt
+  - sudo vagrant ssh -c "echo 'hello world!'"
