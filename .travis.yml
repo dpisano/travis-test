@@ -10,7 +10,7 @@ before_install:
   - vagrant --version
   - sudo vagrant plugin install vagrant-libvirt
 install:
-  - pip3 install ansible molecule
+  - pip3 install ansible 'molecule[vagrant]'==2.22
   - ansible --version
   - molecule --version
 script:
